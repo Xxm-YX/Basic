@@ -1,10 +1,12 @@
 package 并发.Volatile详解;
 
+import java.math.BigDecimal;
+
 public class Test1 {
 
     public static void main(String[] args) {
-        String a = "\\.";
 
-        System.out.println(a.indexOf("\\"));
+
+        System.out.println(Double.valueOf("*.*"));
     }
 }

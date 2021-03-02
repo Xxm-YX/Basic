@@ -15,10 +15,15 @@ public class AtomicReferenceTest {
         //通过CAS设置ar，如果ar的值为p1的华，则将其设置为p2
         ar.compareAndSet(p1,p2);
 
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(ar);
+
         Person p3 = (Person) ar.get();
+        System.out.println(p3);
 
         System.out.println("p3 is "+p3);
-        System.out.println("p3.equals(p1)="+p3.equals(p1));
+        System.out.println("p3.equals(p1)="+p3.equals(p2));
 
     }
     static class Person {
@@ -26,9 +31,7 @@ public class AtomicReferenceTest {
         public Person(long id) {
             this.id = id;
         }
-        public String toString() {
-            return "id:"+id;
-        }
+
     }
 }
 
