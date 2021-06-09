@@ -43,7 +43,7 @@ public class NIOServer {
 
         //创建buffer缓冲区，声明大小是1024，底层使用数组来实现
         ByteBuffer buffer = ByteBuffer.allocate(1024);
-        RequestHandler requestHandler = new RequestHandler();
+//        RequestHandler requestHandler = new RequestHandler();
 
         //轮询，服务器不断轮询，等待客户端的连接
         //如果有客户端轮询上来就取对应得Channel，没有就一直轮询
@@ -88,9 +88,9 @@ public class NIOServer {
                     System.out.println(String.format("客户端发来的消息： %s : %s", channel.getRemoteAddress(), request));
                     //要返回数据的话也要先返回buffer里面进行返回
 
-                    String response =  requestHandler.handle(request);
+//                    String response =  requestHandler.handle(request);
                     //然后返回出去
-                    channel.write(ByteBuffer.wrap(response.getBytes()));
+//                    channel.write(ByteBuffer.wrap(response.getBytes()));
                 }
                 iterator.remove();
             }
