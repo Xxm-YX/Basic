@@ -1,10 +1,10 @@
 package type;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+
 
 
 import java.io.*;
+import java.util.Base64;
 
 
 public class Base64FileUtil {
@@ -44,9 +44,9 @@ public class Base64FileUtil {
             }
         }
         // 对字节数组Base64编码
-        BASE64Encoder encoder = new BASE64Encoder();
+        Base64.Encoder encoder =  Base64.getEncoder();
         // 返回 Base64 编码过的字节数组字符串
-        return encoder.encode(data);
+        return encoder.encodeToString(data);
     }
 
 
@@ -64,11 +64,11 @@ public class Base64FileUtil {
             System.out.println(" 不行，oops！ ");
             return false;
         }
-        BASE64Decoder decoder = new BASE64Decoder();
+        Base64.Decoder decoder = Base64.getDecoder();
 
 
         // Base64解码,对字节数组字符串进行Base64解码并生成文件
-        byte[] byt = decoder.decodeBuffer(base64FileStr);
+        byte[] byt = decoder.decode(base64FileStr);
         for (int i = 0, len = byt.length; i < len; ++i) {
             // 调整异常数据
             if (byt[i] < 0) {

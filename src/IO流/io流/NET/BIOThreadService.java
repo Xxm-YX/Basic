@@ -1,7 +1,5 @@
 package IO流.io流.NET;
 
-import jdk.internal.util.xml.impl.Input;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;

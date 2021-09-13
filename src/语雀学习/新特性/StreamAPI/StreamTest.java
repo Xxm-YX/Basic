@@ -1,4 +1,4 @@
-package 语雀学习.新特性.函数式接口;
+package 语雀学习.新特性.StreamAPI;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -69,7 +69,7 @@ public class StreamTest {
 
         //JDK8 之后：Lambda传参给Comparator接口，其实就是实现了Comparator#compare()
         //注意 equals()是Object的，不妨碍。
-        list.sort((p1 , p2 ) -> p1.getName().length() - p2.getName().length());
+        list.sort(Comparator.comparingInt(p -> p.getName().length()));
 
 
     }

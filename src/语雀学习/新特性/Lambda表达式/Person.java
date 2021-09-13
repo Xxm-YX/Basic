@@ -9,5 +9,15 @@ package 语雀学习.新特性.Lambda表达式;
 public class Person {
 
     private String mouth;
+
+   private String name;
+
+   private Integer age;
+
+    public Person(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public void eat(){};
 }

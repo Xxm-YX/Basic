@@ -1,7 +1,5 @@
 package 泛型.深入;
 
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
