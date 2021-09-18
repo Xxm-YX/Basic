@@ -22,7 +22,7 @@ public class LambdaTest {
         // 构造一个匿名内部类对象
         Runnable r = new Runnable() {
             @Override
-            public void run() {
+            pu blic void run() {
                 System.out.println(str);
                 System.out.println("this===>"+ this);
             }
@@ -31,6 +31,7 @@ public class LambdaTest {
 
 
         Runnable r = () -> {
+            //这里读取到了方法的str变量
             System.out.println(str);
             System.out.println("this===>" + this);
         };
