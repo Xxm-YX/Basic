@@ -10,8 +10,8 @@
         <module name="Basic" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="Basic" target="8" />
+    <bytecodeTargetLevel>
+      <module name="Basic" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
