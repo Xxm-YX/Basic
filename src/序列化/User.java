@@ -1,6 +1,7 @@
 package 序列化;
 
 import java.io.*;
+import java.util.Date;
 
 public class User implements Externalizable {
 
@@ -11,6 +12,35 @@ public class User implements Externalizable {
     private int age;
     private String name;
     private String sex;
+    private Date birthday;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    private boolean gender;
+
 
     public User(int age, String name) {
         this.age = age;
@@ -18,7 +48,6 @@ public class User implements Externalizable {
     }
 
     public User(){
-
     }
 
     @Override
