@@ -17,13 +17,14 @@ import java.util.Base64;
 public class JWTDecoder {
 
     public static void main(String[] args) {
-        String jwtString = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJiYXRjaCI6IjAwMSIsImN1c3RvbWVyIjoiemhvbmdrZXR1bGluZyIsInNuIjoiWlQzNTg4QTIwMFgyMjMwMzAwMTAwMSIsInRpbWVzdGFtcCI6MTY4MTc4OTY2MSwidXVpZCI6IjAyNzVlZWRjLTlkNTQtMzM1Yy04NjRlLWI5ODE4NWM2ZjE3MCJ9.roeGOQaTBVPBJnHby0v6eb2SpKj-Pbr3WwFyfh0u8OashiWVDK6rMoKwGJNmUxsbQRTCz843IEkLwkYhqv227_hPF-rZUK1IOrSa4IFtEeCtbPwSWd02mjFctv36M-jhJoQczhJ82kpFvOpj3ox0dVQ9RQw7T_8FONqu5659Vfs";
+        String jwtString = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJoYXJkd2FyZV9hcmNoIjoieDg2IiwiYXV0aF90eXBlIjoiU2luZ2xlIiwiZW52aXJvbm1lbnQiOnsiZGV2aWNlX2lkIjoic3RyaW5nIiwiZGV2aWNlX3NuIjoic3RyaW5nIiwiZGV2aWNlX3NlcmllcyI6InN0cmluZyJ9LCJwcm9kdWN0Ijp7InByb2R1Y3RfY29kZSI6InN0cmluZyIsInByb2R1Y3RfaWQiOiJzdHJpbmciLCJwcm9kdWN0X3ZlcnNpb24iOiJzdHJpbmcifSwiZmluZ2VycHJpbnQiOiIiLCJleHBpcmVfYXQiOjEwMDAsImN1c3RvbWVyX25hbWUiOiLkuK3np5Hlm77ngbUiLCJzbiI6IkUxVTk3SVJET0dYR1JaVVpJVTExRjJLSFBVSVlZSTNGIiwibWF4X2NsaWVudF9jb3VudCI6MCwicHJvZHVjdF9jb2RlIjoiZmFsbC1kZXRlY3Rpb24iLCJ2ZXJzaW9uIjoiMiIsInBsYXRmb3JtIjoiTGludXgifQ.lKINoIb3YMtfVMmSDQT691q0HsQIw0ltWPFQwDt3UorjMusPcO7p0zqqhZfizvtyCK_1X1aaJR7Aet2T58CdOA_HrFrKDnTX72d4Eh9ejQxI5opCQPSuUiOE0aPh5Xi3rjjOG21fryVhV-aq9cgIpFKPmd76v2vP0b_OqZ-iEdE";
+
 
         try {
             String[] jwtParts = jwtString.split("\\.");
             String jwtHeader = new String(Base64.getDecoder().decode(jwtParts[0]));
             String jwtPayload = new String(Base64.getDecoder().decode(jwtParts[1]));
-            byte[] jwtSignature = Base64.getMimeDecoder().decode(jwtParts[2]);
+//            byte[] jwtSignature = Base64.getMimeDecoder().decode(jwtParts[2]);
 
             System.out.println("Header: " + jwtHeader);
             System.out.println("Payload: " + jwtPayload);
@@ -49,6 +50,8 @@ public class JWTDecoder {
                 "0Txr1gt2XhMT0lGRJkmnNq1xxAvVLHruCgXfId1w+El3ToQ+k66CKMCBvMfGqlXw\n" +
                 "IgI5x5TXkfmaN1BUNBjcegUVPQnW42mwqPxvqcoT/H/MHqfhWYfElUNQBVytFF21\n" +
                 "oxULmWBPMv4wDnCNzQIDAQAB\n";
+
+
 
         publicKeyStr = publicKeyStr.replaceAll("\\n", "")
                 .replace("-----BEGIN PUBLIC KEY-----", "")
